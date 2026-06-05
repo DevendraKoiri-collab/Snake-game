@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto hide alert after seconds</title>
+    <style>
+       *
+        {
+        box-sizing:border-box;
+          padding:0;
+          margin:0;
+        }
+
+        body
+           {
+           min-height:100vh;
+          font-family:Arial, sans-serif;
+           }
+         .main
+{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+     
+}
+
+.form
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:calc(100vh - 80px);
+    border:1px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: aquamarine;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+}
+    .form
+{
+    transition: 0.3s;
+}
+
+.form:hover
+{
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+}
+        .navbar
+        {
+            width: 100%;
+            display:flex;
+            justify-content:space-evenly;
+            align-content: center;
+            background-color: #555;
+            color:white;
+            height:40px;
+            
+        }
+        .navbar a{
+            color: white;
+             text-decoration: none;
+             margin-top:10px;
+        }
+        input{
+            margin-left: 10px;
+            margin-top:20px;
+            width:450px;
+            height:40px;
+            color:black;
+            border-radius: 10px;
+           
+           
+        }
+        input::placeholder{
+         text-align:left;
+       }
+        select{
+             margin-top: 10px;
+             margin-left: 10px;
+             height: 40px;
+             width:200px;
+              border-radius: 10px;
+        }
+        input[type='submit']
+        {
+            width:200px;
+            margin-left:150px;
+             border-radius: 10px;
+             
+        }
+        
+      input[type='submit']:hover{
+    cursor:pointer;
+    opacity:0.9;
+}
+        .heading{
+        text-align:center;
+       margin-top:10px;
+}
+        .success-alert{
+    width:500px;
+    padding:15px 20px;
+    background:#e8f5e9;
+    border:1px solid #4caf50;
+    border-radius:8px;
+    color:#2e7d32;
+    display:none;
+    justify-content:space-between;
+    align-items:center;
+    margin:20px auto;
+}
+
+.close-btn{
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <a href="#">Home</a>
+            <a href="#">about us</a>
+            <a href="#">services</a>
+            <a href="#">Management</a>
+            <a href="#">Support</a>
+        </div>
+
+        <div class="success-alert">
+        <span>✔ Success! Your form has been submitted.</span>
+      <span class="close-btn">✖</span>
+</div>
+        <div class="form">
+            <form>
+                <h2 class="heading">Form Submission</h2>
+                <input type="text" placeholder=" Enter your name">
+                <input type="text" placeholder=" Enter your age">
+                <select>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">others</option>
+                </select>
+                <input type="number" placeholder=" Enter phonenumber">
+                <input type="submit" value="submit" id="submit">
+            </form>
+        </div>
+    </div>
+    
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
