@@ -3,157 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto hide alert after seconds</title>
-    <style>
-       *
-        {
-        box-sizing:border-box;
-          padding:0;
-          margin:0;
-        }
-
-        body
-           {
-           min-height:100vh;
-          font-family:Arial, sans-serif;
-           }
-         .main
-{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-     
-}
-
-.form
-{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:calc(100vh - 80px);
-    border:1px solid black;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background-color: aquamarine;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-}
-    .form
-{
-    transition: 0.3s;
-}
-
-.form:hover
-{
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
-}
-        .navbar
-        {
-            width: 100%;
-            display:flex;
-            justify-content:space-evenly;
-            align-content: center;
-            background-color: #555;
-            color:white;
-            height:40px;
-            
-        }
-        .navbar a{
-            color: white;
-             text-decoration: none;
-             margin-top:10px;
-        }
-        input{
-            margin-left: 10px;
-            margin-top:20px;
-            width:450px;
-            height:40px;
-            color:black;
-            border-radius: 10px;
-           
-           
-        }
-        input::placeholder{
-         text-align:left;
-       }
-        select{
-             margin-top: 10px;
-             margin-left: 10px;
-             height: 40px;
-             width:200px;
-              border-radius: 10px;
-        }
-        input[type='submit']
-        {
-            width:200px;
-            margin-left:150px;
-             border-radius: 10px;
-             
-        }
-        
-      input[type='submit']:hover{
-    cursor:pointer;
-    opacity:0.9;
-}
-        .heading{
-        text-align:center;
-       margin-top:10px;
-}
-        .success-alert{
-    width:500px;
-    padding:15px 20px;
-    background:#e8f5e9;
-    border:1px solid #4caf50;
-    border-radius:8px;
-    color:#2e7d32;
-    display:none;
-    justify-content:space-between;
-    align-items:center;
-    margin:20px auto;
-}
-
-.close-btn{
-    cursor:pointer;
-    font-size:18px;
-    font-weight:bold;
-}
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-    <div class="main">
-        <div class="navbar">
-            <a href="#">Home</a>
-            <a href="#">about us</a>
-            <a href="#">services</a>
-            <a href="#">Management</a>
-            <a href="#">Support</a>
+    <nav>
+        <div id="logo">
+        <div class="img"></div>
+        <h4> Shreyians <br>Coding School</h4>
         </div>
-
-        <div class="success-alert">
-        <span>✔ Success! Your form has been submitted.</span>
-      <span class="close-btn">✖</span>
-</div>
-        <div class="form">
-            <form>
-                <h2 class="heading">Form Submission</h2>
-                <input type="text" placeholder=" Enter your name">
-                <input type="text" placeholder=" Enter your age">
-                <select>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="others">others</option>
-                </select>
-                <input type="number" placeholder=" Enter phonenumber">
-                <input type="submit" value="submit" id="submit">
-            </form>
-        </div>
+    <div id="nav-bar">
+        <h4>Home</h4>
+        <h4>Courses</h4>
+        <h4>Cohort 2.0</h4>
+         <h4>Request Callback</h4>
+        <i class="fa-solid fa-bell"></i>
+         <img src="data:image/webp;base64,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" alt="profile">
     </div>
+    </nav>
+    <main>
+        <section class="section1">
+
+            <div class="left">  <h1>
+                 2.0 Job Ready AI Powered <br>
+               Cohort: Complete Web <br>
+                  Development + DSA + <br>
+                  Gen-AI + Aptitude
+           </h1></div>
+
+
+           <div class="right">
+            <div class="tags">  <span>MERN Stack</span>
+               <span>DSA With JS</span>
+            <span>AI Powered</span>
+            <span>Placement Focused</span>
+         <br>  <br> <br><span>Aptitude & Reasoning</span>
+           </div>
+         </div>
+
+
+           <div class="pricing">
+    <h2>
+        Price 
+        <span class="current-price">₹ 5999</span>
+        <del>₹ 11999</del>
+        <span>(+ GST)</span>
+    </h2>
+
+    <p class="offer">Scratch Card In The End!</p>
+
+    <div class="buttons">
+        <button class="buy-btn">Buy Now</button>
+        <button class="syllabus-btn">View Syllabus</button>
+    </div>
+
+    <p class="batch">
+        Batch Starts on <span>15th September</span>
+    </p>
+</div>
+
+           
+          
+
+        </section>
+        <section class="section2">
+            <div class="inner">
+                <div class="img-logo"></div>
+               <div class="course-info">
+
+    <div class="info-card">
+        <span class="label">Language:</span>
+        <span class="value">Hinglish</span>
+    </div>
+
+    <div class="info-card">
+        <span class="label">Certificate:</span>
+        <span class="value">YES</span>
+    </div>
+
+    <div class="info-card">
+        <span class="label">Schedule:</span>
+        <span class="value">Mon - Sat</span>
+        <span class="small">(8:30 PM)</span>
+    </div>
+
+    <div class="info-card">
+        <span class="label">Total Content:</span>
+        <span class="value">250+ Hours</span>
+    </div>
+
+</div>
+            </div>
+        </section>
+    </main>
+       <section class="hero">
+        <div class="glow"></div>
+      <h1>Get Placed.</h1>
+      <p>With Job Ready AI Powered Cohort</p>
+     </section>
     
 
-
-
-
-    <script src="script.js"></script>
 </body>
 </html>
